@@ -28,7 +28,7 @@ class RealUnitsGenerationDayAheadExtractor(PseDataDayAheadExtractor):
         data_transformed = data_transformed.rename(columns={'Kod': 'code'})
         data_transformed = data_transformed[['date', 'code', 'power']]
 
-        unit_static_data = pd.read_csv('unit_codes_by_sources.csv')
+        unit_static_data = pd.read_csv('resources/unit_codes_by_sources.csv')
         unit_static_data = unit_static_data[['unit_code_pse', 'capacity_installed', 'unit_type']]
         data_with_capacity_installed = \
             pd.merge(data_transformed, unit_static_data, left_on='code', right_on='unit_code_pse')
