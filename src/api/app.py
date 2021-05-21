@@ -68,7 +68,7 @@ def predict_class_curl(input: str = Form(...)):
             "petal width (cm)": [float(x) for x in pet_width],
         }
     )
-    y_pred = list(model.predictnew_obs))
+    y_pred = list(model.predict(new_obs))
     y_pred = [str(x) for x in y_pred]
     response = {"y_pred": ",".join(y_pred)}
     return response
